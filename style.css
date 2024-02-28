@@ -7,3 +7,61 @@ body{
 *{
     color: #fff;
 }
+label {
+    pointer-events: none;
+    margin:2em ;
+  
+    .input {
+      display: none;
+  
+      &:checked + .toggle-wrapper {
+        box-shadow: 0 8px 14px 0 rgba(darken(#3957ee, 12%), 0.12);
+      }
+  
+      &:checked + .toggle-wrapper > .selector {
+        left: calc(100% - 50px);
+        background-color: #3957ee;
+      }
+  
+      &:checked ~ .notification > .selected:before {
+        content: ' Male';
+      }
+    }
+  
+    .toggle-wrapper {
+      position: relative;
+      width: 120px;
+      height: 60px;
+      background-color: #eaeaea;
+      border-radius: 999px;
+      margin: auto;
+      cursor: pointer;
+      pointer-events: all;
+      box-shadow: 0 8px 14px 0 rgba(darken(#ee5f39, 12%), 0.12);
+  
+      .selector {
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        top: 50%;
+        left: 10px;
+        transform: translateY(-50%);
+        background-color: #ee5f39;
+        transition: left 0.25s ease;
+        border-radius: 50%;
+      }
+    }
+  
+    .notification {
+      font-size: 20px;
+      width: 100%;
+      margin-top: 2em;
+  
+      .selected:before {
+        content: ' Female';
+        font-size: 20px;
+        border-bottom: 2px solid;
+      }
+    }
+  }
+  
