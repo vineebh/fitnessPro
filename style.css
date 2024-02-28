@@ -1,0 +1,9 @@
+body{
+    background-image: url(imgs/bg.jpg);
+    background-color: black;
+    background-repeat: no-repeat;
+    background-position: center -5rem;
+}
+*{
+    color: #fff;
+}
