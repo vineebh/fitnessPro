@@ -1,12 +1,167 @@
 body{
     background-image: url(imgs/bg.jpg);
-    background-color: black;
+    background-color: rgb(0, 0, 0);       
     background-repeat: no-repeat;
     background-position: center -5rem;
 }
 *{
-    color: #fff;
+    color: #ffffff;
+    font-family:"Rubik", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 360;
+    font-style: normal;
+    box-sizing: border-box;
+    padding: 0;
 }
+#logo img{
+  height: 4em;
+  width: 4em;
+  border-radius: 20em;
+  margin-right: 1em;
+  border: 1px solid #eee;
+}
+.bname{
+  color: yellow;
+  font-weight: bolder;
+  font-size: larger;
+  letter-spacing: 0.2cap;
+}
+#navbar{
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  padding: 0.4em 0.8em;
+  height:min-content;
+  width: 4rem;
+  border-radius: 0 1em 1.6em 0;
+  color:#fff;
+  background-color: #1b1a1a;
+  transition: all 0.5s ease;
+}
+#navbar.active ~ .main-content {
+  left: 50rem;
+  width: calc(100% - 50rem);
+}
+#navbar.active{
+  width: 20em;
+}
+#navbar #menu-btn{
+  position: absolute;
+  color: #eee;
+  top: 1rem;
+  left: 50%;
+  height: 2em;
+  line-height: 60rem;
+  transform: translateX(-60%);
+  cursor: pointer;
+}
+#navbar.active #menu-btn{
+  left: 90%;
+  src: url(imgs/icons/rightback.png);
+}
+#navbar #logo{
+  padding-top: 2em;
+  color:#eee;
+  display:flex;
+  height: 2em;
+  width: 100%;
+  margin-bottom: 3em;
+  align-items: center;
+  pointer-events: none;
+  opacity: 0;
+}
+#navbar.active #logo{
+  opacity: 1;
+}
+#navbar #logo i{
+  color:#eee;
+  font-size: 1.5em;
+  font-weight: 600;
+  margin-right: 2rem;
+}
+#navbar ul{
+  margin-top: 20rem;
+}
+#navbar ul li{
+  position: relative;
+  list-style-type: none;
+  height: 2em;
+  width: 90%;
+  margin: 1rem auto;
+  align-items: center;
+  line-height: 2em;
+}
+#navbar ul li a{
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  border-radius: 0.8rem;
+}
+#navbar ul li a img{
+  min-width: 2em;
+  text-align: center;
+  height: 2em;
+  border-radius: 0.4em;
+  line-height: 2em;
+}
+#navbar .nav-item{
+  color:#eee;
+  background-color: #1b1a1a;
+  opacity: 0;
+  padding: 0 1em;
+  border-radius: 0.4em;
+}
+#navbar .nav-item:hover{
+  color: #1b1a1a;
+  background-color: #fff;
+}
+#navbar.active .nav-item{
+  opacity: 1;
+}
+#navbar .tooltip{
+  color: rgb(230, 243, 52);
+  position: absolute;
+  left: 6em;
+  top: 50%;
+  transform: translate(-40%,-50%);
+  box-shadow: 0 0.5rem 0.8rem rgba(255, 255, 255, 0.836);
+  border-radius: .6rem;
+  padding: .4rem 1rem;
+  line-height: 1.8rem;
+  z-index: 20;
+  opacity: 0;
+}
+#navbar ul li:hover .tooltip{
+  opacity: 1;
+}
+#navbar.active ul li .tooltip{
+  display: none;
+}
+.main-content{
+  position: relative;
+  min-height: 100vh;
+  top: 0;
+  left: 5rem;
+  transition: all 0.5s ease;
+  width: calc(100% - 5rem);
+  padding: 1em;
+}
+.container{
+  display: flex;
+  justify-content: space-between;
+}
+.madimi-one-regular {
+  font-family: "Madimi One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* #navbar.activee #gender{
+  opacity: 1;
+}
+#gender{
+  opacity: 0;
+} */
 label {
     pointer-events: none;
     margin:2em ;
@@ -15,16 +170,16 @@ label {
       display: none;
   
       &:checked + .toggle-wrapper {
-        box-shadow: 0 8px 14px 0 rgba(darken(#3957ee, 12%), 0.12);
+        box-shadow: 0 8px 14px 0 rgba(darken(#ee5f39, 12%), 0.12);
       }
   
       &:checked + .toggle-wrapper > .selector {
         left: calc(100% - 50px);
-        background-color: #3957ee;
+        background-color: #ee5f39;
       }
   
       &:checked ~ .notification > .selected:before {
-        content: ' Male';
+        content: ' Female';
       }
     }
   
@@ -37,7 +192,7 @@ label {
       margin: auto;
       cursor: pointer;
       pointer-events: all;
-      box-shadow: 0 8px 14px 0 rgba(darken(#ee5f39, 12%), 0.12);
+      box-shadow: 0 8px 14px 0 rgba(darken(#3957ee, 12%), 0.12);
   
       .selector {
         width: 40px;
@@ -46,7 +201,7 @@ label {
         top: 50%;
         left: 10px;
         transform: translateY(-50%);
-        background-color: #ee5f39;
+        background-color: #3957ee;
         transition: left 0.25s ease;
         border-radius: 50%;
       }
@@ -58,7 +213,7 @@ label {
       margin-top: 2em;
   
       .selected:before {
-        content: ' Female';
+        content: ' Male';
         font-size: 20px;
         border-bottom: 2px solid;
       }

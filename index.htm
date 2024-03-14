@@ -4,15 +4,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fitness Pro</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Madimi+One&family=Rubik:wght@360&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="nav-bar">
-        <label for="toggle">
-            <input class="input" id="toggle" type="checkbox"/>
-            <div class="toggle-wrapper"><span class="selector"></span></div>
-            <p class="notification">You have selected<span class="selected"></span></p>
-          </label>
+    <div id="navbar">
+        <div id="top">
+            <img src="imgs/icons/menu.png" id="menu-btn" alt="menu" >
+        </div>
+        <div id="logo">
+            <img src="imgs/logo.jpg" alt="Fitness Pro">
+                <i><span class="bname">F</span>itness <span class="bname">P</span>ro</i>
+        </div>
+        
+        <ul>
+            <li>
+                <a href="#">
+                    <img src="imgs/icons/products.png" alt="Products">
+                    <span class="nav-item">Products</span>
+                </a>
+                <span class="tooltip">Products</span>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="imgs/icons/aboutus.png">
+                    <span class="nav-item">About us</span>
+                </a>
+                <span class="tooltip">AboutUs</span>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="imgs/icons/contact-us.png">
+                    <span class="nav-item">Contact us</span>
+                </a>
+                <span class="tooltip">ContactUs</span>
+            </li>
+        </ul>
     </div>
+    <div class="main-content">
+        <div class="container">
+            Fitness Pro code
+            <div id="gender">
+                <label for="toggle">
+                    <input class="input" id="toggle" type="checkbox"/>
+                    <div class="toggle-wrapper"><span class="selector"></span></div>
+                    <p class="notification">You have selected<span class="selected"></span></p>
+                </label>
+            </div>
+        </div>
+        
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
